@@ -57,6 +57,4 @@ func validatePodSpec(w http.ResponseWriter, r *http.Request) {
 		jsonError(fmt.Errorf("error encoding object: %w", err), 400, w)
 		return
 	}
-
-	w.WriteHeader(200)
 }
