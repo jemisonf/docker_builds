@@ -10,7 +10,7 @@ import (
 func main() {
 	logger := log.Default()
 
-	port := ":3333"
+	port := ":4444"
 	if len(os.Args) > 1 {
 		port = os.Args[1]
 	}
