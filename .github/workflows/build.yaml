@@ -26,3 +26,5 @@ jobs:
           push: true
           # if forking, replace `jemisonf` with your docker hub username
           tags: jemisonf/docker_builds:${{ github.sha }},jemisonf/docker_builds:latest
+          cache-from: type=registry,ref=jemisonf/docker_builds:latest
+          cache-to: type=inline
