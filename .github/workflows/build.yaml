@@ -24,4 +24,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: jemisonf/docker_builds:${{ github.sha }}
+          # if forking, replace `jemisonf` with your docker hub username
+          tags: jemisonf/docker_builds:${{ github.sha }},jemisonf/docker_builds:latest
