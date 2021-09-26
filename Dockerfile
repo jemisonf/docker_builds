@@ -1,4 +1,4 @@
-FROM golang:1.16
+FROM golang:1.16 AS builder
 
 WORKDIR /app
 
@@ -8,6 +8,12 @@ RUN go mod download
 
 COPY . ./
 
-RUN go build .
+RUN go build . 
 
-CMD ./server
+FROM gcr.io/distroless/base
+
+WORKDIR /app
+
+COPY --from=builder /app/docker_builds .
+
+CMD ["/app/docker_builds"]
